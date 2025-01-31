@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Ahorros - Versión Mejorada</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Chart.js para la gráfica -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- jsPDF para exportar a PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Calculadora de Ahorros <span class="emoji">💸</span></h1>
+    <p class="subtitle">Simula tus ganancias con interés compuesto y descubre a qué “nivel” llegas.</p>
+    
+    <!-- Sección FAQ con acordeón -->
+    <div class="faq-section">
+      <button class="accordion">¿Qué es el interés compuesto?</button>
+      <div class="accordion-panel">
+        <p>El interés compuesto consiste en que los intereses generados se reinvierten, de modo que cada periodo se calculan sobre el capital inicial más los intereses acumulados.</p>
+      </div>
+      <button class="accordion">¿Por qué usar esta calculadora?</button>
+      <div class="accordion-panel">
+        <p>Te ayuda a visualizar el crecimiento de tus ahorros y a planificar aportaciones mensuales para alcanzar tus metas financieras.</p>
+      </div>
+    </div>
+
+    <!-- Formulario de entrada de datos -->
+    <form id="calculator-form" class="form">
+      <div class="form-group">
+        <label for="initial-amount">Monto inicial (€):</label>
+        <input 
+          type="number" 
+          id="initial-amount" 
+          placeholder="Ejemplo: 1000"
+          required
+          min="0"
+          step="0.01"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="monthly-contribution">Aportación mensual (€):</label>
+        <input 
+          type="number" 
+          id="monthly-contribution" 
+          placeholder="Ejemplo: 200"
+          required
+          min="0"
+          step="0.01"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="interest-rate">Tasa de interés anual (%):</label>
+        <input 
+          type="number" 
+          id="interest-rate" 
+          placeholder="Ejemplo: 5"
+          required
+          min="0"
+          step="0.01"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="years">Número de años:</label>
+        <input 
+          type="number" 
+          id="years" 
+          placeholder="Ejemplo: 10"
+          required
+          min="1"
+          max="100"
+        />
+      </div>
+      
+      <button type="submit" class="calculate-btn">Calcular</button>
+      <button type="button" id="reset-btn" class="reset-btn">Reiniciar</button>
+    </form>
+    
+    <!-- Contenedor para la gráfica -->
+    <div class="chart-container">
+      <canvas id="savings-chart"></canvas>
+    </div>
+    
+    <!-- Resumen de resultados -->
+    <div id="summary" class="summary hidden">
+      <h2>Resumen de Resultados</h2>
+      <table>
+        <tr>
+          <td><strong>Monto inicial:</strong></td>
+          <td id="summary-initial">-</td>
+        </tr>
+        <tr>
+          <td><strong>Total aportado:</strong></td>
+          <td id="summary-contributed">-</td>
+        </tr>
+        <tr>
+          <td><strong>Intereses ganados:</strong></td>
+          <td id="summary-interest">-</td>
+        </tr>
+        <tr>
+          <td><strong>Monto final:</strong></td>
+          <td id="summary-final">-</td>
+        </tr>
+      </table>
+      <p id="final-level" class="final-level"></p>
+      
+      <button type="button" id="pdf-btn" class="pdf-btn">Exportar a PDF</button>
+    </div>
+  </div>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>

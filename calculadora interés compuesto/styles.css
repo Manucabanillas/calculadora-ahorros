@@ -1,0 +1,216 @@
+/* Fuentes y variables de color */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+:root {
+  --main-bg-color: #FEE440;      /* Amarillo pastel */
+  --secondary-bg-color: #FA8072; /* Salmón */
+  --text-color: #333;
+  --btn-color: #00bbf9;
+  --container-bg: #fffcf2; 
+  --border-color: #ccc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fredoka One', cursive;
+  background: linear-gradient(to bottom right, var(--main-bg-color), var(--secondary-bg-color));
+  color: var(--text-color);
+  transition: background-color 0.5s ease;
+}
+
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: var(--container-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.title {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 2rem;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 0 0 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* FAQ - Acordeón */
+.faq-section {
+  margin-bottom: 1.5rem;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  margin: 0.2rem 0;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+.accordion:hover {
+  background-color: #ddd;
+}
+
+.accordion.active {
+  background-color: #ccc;
+}
+
+.accordion-panel {
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+}
+
+/* Formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.3rem;
+}
+
+input[type="number"] {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--border-color);
+  font-size: 1rem;
+}
+
+.calculate-btn, .reset-btn {
+  font-size: 1rem;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  margin-top: 0.5rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calculate-btn {
+  background-color: var(--btn-color);
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.calculate-btn:hover {
+  background-color: #0284a8;
+}
+
+.reset-btn {
+  background-color: #f25f5c;
+  color: #fff;
+}
+
+.reset-btn:hover {
+  background-color: #d9534f;
+}
+
+/* Gráfica */
+.chart-container {
+  margin-top: 2rem;
+}
+
+/* Resumen */
+.summary {
+  margin-top: 2rem;
+  text-align: left;
+  animation: fadeIn 0.8s forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+.summary table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.summary td {
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+/* Niveles finales */
+.final-level {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #F35B04;
+}
+
+/* Botón PDF */
+.pdf-btn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pdf-btn:hover {
+  background-color: #449d48;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive (pantallas pequeñas) */
+@media (max-width: 600px) {
+  .container {
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+
+  input[type="number"] {
+    font-size: 0.9rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .calculate-btn, .reset-btn, .pdf-btn {
+    font-size: 0.9rem;
+  }
+}
