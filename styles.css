@@ -1,0 +1,82 @@
+/* Estilo divertido y colorido */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+:root {
+  --main-bg-color: #FEE440;   /* Amarillo pastel */
+  --secondary-bg-color: #FA8072; /* Salmón */
+  --text-color: #333;
+  --btn-color: #00bbf9;
+  --container-bg: #fffcf2; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fredoka One', cursive;
+  background: linear-gradient(to bottom right, var(--main-bg-color), var(--secondary-bg-color));
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 500px;
+  margin: 3rem auto;
+  background-color: var(--container-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.emoji {
+  font-size: 1.2em;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.3rem;
+}
+
+input[type="number"] {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+}
+
+.calculate-btn {
+  background-color: var(--btn-color);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.calculate-btn:hover {
+  background-color: #0284a8;
+}
+
+.chart-container {
+  margin-top: 2rem;
+}
+
+.result-message {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #F35B04;
+}

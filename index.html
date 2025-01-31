@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Ahorros Divertida</title>
+  <!-- Enlazar la hoja de estilo -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Chart.js para la gráfica -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de Ahorros <span class="emoji">💸</span></h1>
+    
+    <form id="calculator-form">
+      <div class="form-group">
+        <label for="initial-amount">Monto inicial (€):</label>
+        <input type="number" id="initial-amount" value="1000" required>
+      </div>
+
+      <div class="form-group">
+        <label for="monthly-contribution">Aportación mensual (€):</label>
+        <input type="number" id="monthly-contribution" value="200" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="interest-rate">Tasa de interés anual (%):</label>
+        <input type="number" id="interest-rate" step="0.01" value="5" required>
+      </div>
+
+      <div class="form-group">
+        <label for="years">Número de años:</label>
+        <input type="number" id="years" value="10" required>
+      </div>
+      
+      <button type="submit" class="calculate-btn">Calcular</button>
+    </form>
+
+    <div class="chart-container">
+      <canvas id="savings-chart"></canvas>
+    </div>
+
+    <div id="resultMessage" class="result-message"></div>
+  </div>
+
+  <!-- Nuestro script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
